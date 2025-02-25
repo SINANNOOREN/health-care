@@ -18,7 +18,8 @@ import ContactSection from './components/ContactSection';
 
 const App = () => {
   return (
-    <Router>
+<div className='m-0 p-0'>
+<Router>
       <Navbar />
     
       <Routes>
@@ -37,6 +38,7 @@ const App = () => {
       </Routes>
       <FooterSection/>
     </Router>
+</div>
  
   );
 };
