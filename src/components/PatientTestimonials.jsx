@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { FaQuoteLeft, FaQuoteRight } from 'react-icons/fa';
-import { BsChevronLeft, BsChevronRight } from 'react-icons/bs';
+import { useSwipeable } from 'react-swipeable';
 
 const testimonials = [
   {
@@ -43,6 +43,14 @@ const PatientTestimonials = () => {
     );
   };
 
+  // Swipeable Handlers
+  const handlers = useSwipeable({
+    onSwipedLeft: nextTestimonial,
+    onSwipedRight: prevTestimonial,
+    preventDefaultTouchmoveEvent: true,
+    trackMouse: true,
+  });
+
   return (
     <section className="py-20 bg-gray-50">
       <div className="max-w-5xl mx-auto px-4 text-center">
@@ -63,7 +71,7 @@ const PatientTestimonials = () => {
           Real experiences from patients who received compassionate care.
         </motion.p>
 
-        <div className="relative mt-10">
+        <div className="relative mt-10" {...handlers}>
           <motion.div 
             className="bg-white rounded-2xl shadow-xl p-10 text-left"
             initial={{ opacity: 0, x: 50 }}
@@ -87,30 +95,17 @@ const PatientTestimonials = () => {
             </div>
           </motion.div>
 
-          {/* Premium Arrow Buttons */}
-          <button 
-            onClick={prevTestimonial}
-            className="absolute left-0 top-1/2 transform -translate-y-1/2 bg-gray-300 text-white rounded-full p-4  transition shadow-lg"
-          >
-            <BsChevronLeft size={15} />
-          </button>
-          <button 
-            onClick={nextTestimonial}
-            className="absolute right-0 top-1/2 transform -translate-y-1/2 bg-gray-300 text-white rounded-full p-4  transition shadow-lg"
-          >
-            <BsChevronRight size={15} />
-          </button>
-
           {/* Three Dots Navigation */}
           <div className="flex justify-center space-x-2 mt-6">
             {testimonials.map((_, index) => (
               <span
                 key={index}
-                className={`h-3 w-3 rounded-full transition-all duration-300 ${
+                className={`h-3 w-3 rounded-full transition-all duration-300 cursor-pointer ${
                   currentIndex === index
                     ? "bg-blue-600 scale-125"
                     : "bg-gray-400"
                 }`}
+                onClick={() => setCurrentIndex(index)}
               />
             ))}
           </div>
