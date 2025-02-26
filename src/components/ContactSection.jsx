@@ -50,36 +50,7 @@ const ContactSection = () => {
         </motion.div>
 
         {/* Contact Information */}
-        <motion.div 
-          initial={{ opacity: 0, x: 50 }} 
-          animate={{ opacity: 1, x: 0 }} 
-          transition={{ duration: 0.6 }}
-          className="flex flex-col justify-center"
-        >
-          <h2 className="text-3xl font-bold text-blue-600 mb-6">Contact Information</h2>
-          <div className="space-y-4 text-gray-700">
-            <div className="flex items-center">
-              <FaMapMarkerAlt className="text-blue-600 mr-3" size={24} />
-              <p>123 Health St., Wellness City</p>
-            </div>
-            <div className="flex items-center">
-              <FaPhoneAlt className="text-blue-600 mr-3" size={24} />
-              <p>Phone: +1 (555) 123-4567</p>
-            </div>
-            <div className="flex items-center">
-              <FaEnvelope className="text-blue-600 mr-3" size={24} />
-              <p>Email: info@healthcareplus.com</p>
-            </div>
-          </div>
-          
-          {/* Social Media Icons */}
-          <div className="flex space-x-4 mt-6">
-            <a href="#" className="text-gray-500 hover:text-blue-600"><FaFacebook size={30} /></a>
-            <a href="#" className="text-gray-500 hover:text-blue-600"><FaTwitter size={30} /></a>
-            <a href="#" className="text-gray-500 hover:text-blue-600"><FaInstagram size={30} /></a>
-            <a href="#" className="text-gray-500 hover:text-blue-600"><FaLinkedin size={30} /></a>
-          </div>
-        </motion.div>
+      
       </div>
     </section>
   );

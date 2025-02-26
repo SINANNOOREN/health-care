@@ -5,6 +5,7 @@ import QuickOverview from '../components/Quickoverview';
 import PatientTestimonials from '../components/PatientTestimonials';
 import ContactSection from '../components/ContactSection';
 import FooterSection from '../components/Footer';
+import { Link } from "react-router";
 
 import bgimage from "../assets/heroimg.jpg";
 const HomePage = () => {
@@ -37,18 +38,17 @@ const HomePage = () => {
           animate={{ opacity: 1, scale: 1 }}
           transition={{ delay: 1, duration: 0.5 }}
         >
-          <a 
-            href="#" 
+          <Link  to="/appointment" 
             className="bg-blue-600 hover:bg-blue-700 text-white py-3 px-6 rounded-full shadow-lg transition duration-300 transform hover:scale-105"
           >
             Book an Appointment
-          </a>
-          <a 
-            href="#" 
-            className="bg-white hover:bg-gray-100 text-blue-600 py-3 px-6 rounded-full shadow-lg transition duration-300 transform hover:scale-105"
+          </Link>
+          <Link to="/contact"
+            className="bg-white hover:bg-gray-100  text-blue-600 py-3 px-6   rounded-full shadow-lg transition duration-300 transform hover:scale-105"
           >
             Contact Us
-          </a>
+          </Link>
+         
         </motion.div>
       </div>
       <QuickOverview/>

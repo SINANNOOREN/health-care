@@ -1,11 +1,11 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import { FaFacebook, FaTwitter, FaInstagram, FaLinkedin } from 'react-icons/fa';
+import { FaFacebook,FaTwitterSquare, FaInstagram, FaLinkedin } from 'react-icons/fa';
 
 const FooterSection = () => {
   return (
-    <footer className="bg-blue-900 text-white py-10">
+    <footer className="bg-gray-900 text-white py-10">
       <div className="max-w-6xl mx-auto px-4 grid grid-cols-1 md:grid-cols-3 gap-8">
         
         {/* About Section */}
@@ -49,7 +49,7 @@ const FooterSection = () => {
           <p className="text-gray-300">Email: info@healthcareplus.com</p>
           <div className="flex space-x-4 mt-4">
             <a href="#" className="text-gray-400 hover:text-blue-400"><FaFacebook size={24} /></a>
-            <a href="#" className="text-gray-400 hover:text-blue-400"><FaTwitter size={24} /></a>
+            <a href="#" className="text-gray-400 hover:text-blue-400"><FaTwitterSquare size={24} /></a>
             <a href="#" className="text-gray-400 hover:text-blue-400"><FaInstagram size={24} /></a>
             <a href="#" className="text-gray-400 hover:text-blue-400"><FaLinkedin size={24} /></a>
           </div>
